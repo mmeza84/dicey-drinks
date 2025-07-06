@@ -34,7 +34,17 @@ const useDrinkStore = create<DrinkState>()(
   persist(
     (set) => ({
       drinkRollStep: 1,
-      drink: {} as DrinkBuilder,
+      drink: {
+        drinkType: "",
+        spiritCount: 0,
+        mixerCount: 0,
+        flairCount: 0,
+        ingredients: {
+          spirits: [],
+          mixers: [],
+          flair: [],
+        },
+      } as DrinkBuilder,
       setDrinkRollStep: (step: number) => set({ drinkRollStep: step }),
       setDrinkType: (type) =>
         set((state) => ({ drink: { ...state.drink, drinkType: type } })),
