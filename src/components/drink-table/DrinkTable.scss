@@ -1,0 +1,25 @@
+.drink-table {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+
+  h4 {
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  &-content {
+    padding: 0.125rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .drink-item {
+      text-align: left;
+      font-size: 0.75rem;
+
+      &.selected {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@use "@styles/colorVariables.scss" as colorVariables;
+
+// SCSS Variables
+$border-radius: 8px;
+$spacing: 1rem;
+
+.app {
+  padding: $spacing;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    border-bottom: 3px solid colorVariables.$rich-black;
+    margin-bottom: $spacing;
+  }
+
+  button {
+    cursor: pointer;
+    border: 2px solid colorVariables.$rich-black;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: colorVariables.$hunter-green;
+  }
+
+  .app-content {
+    width: 100%;
+    max-width: 20rem;
+  }
+}

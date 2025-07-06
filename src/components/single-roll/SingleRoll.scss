@@ -1,0 +1,10 @@
+@use "@styles/colorVariables.scss" as colorVariables;
+
+.single-roll {
+  .button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
