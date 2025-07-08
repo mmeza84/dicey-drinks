@@ -4,7 +4,7 @@ import useDrinkStore from "@/store/drinkStore";
 import "./Roll.scss";
 import { capitalize, getDieForIngredientCount } from "@/utils/utils";
 import type { Ingredient } from "@/models/models";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import MultiRoll from "@/components/multi-roll/MultiRoll";
 import SingleRoll from "@/components/single-roll/SingleRoll";
 import DrinkTable from "@/components/drink-table/DrinkTable";
@@ -33,15 +33,24 @@ export default function Roll() {
     (state) => state
   );
 
-  const spirits = ingredients.filter(
+  const availableSpirits = ingredients.filter(
     (ingredient) => ingredient.type === "spirit"
   );
-  const mixers = ingredients.filter(
+  const availableMixers = ingredients.filter(
     (ingredient) => ingredient.type === "mixer"
   );
 
-  const spiritsRollDie = getDieForIngredientCount(spirits.length);
-  const mixersRollDie = getDieForIngredientCount(mixers.length);
+  const spiritsRollDie = getDieForIngredientCount(availableSpirits.length);
+  const mixersRollDie = getDieForIngredientCount(availableMixers.length);
+
+  const spirits = useMemo(
+    () => availableSpirits.slice(0, spiritsRollDie),
+    [availableSpirits, spiritsRollDie]
+  );
+  const mixers = useMemo(
+    () => availableMixers.slice(0, mixersRollDie),
+    [availableMixers, mixersRollDie]
+  );
 
   const {
     drink,
