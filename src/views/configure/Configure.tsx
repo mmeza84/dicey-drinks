@@ -3,6 +3,7 @@ import "./Configure.scss";
 import supabase from "@/utils/supabase";
 import useConfigurationStore from "@/store/configurationStore";
 import type { Ingredient } from "@/models/models";
+import Card from "@/components/card/Card";
 
 export default function Configure() {
   const { ingredients, setIngredients, addIngredient, removeIngredient } =
@@ -90,8 +91,8 @@ export default function Configure() {
 
   return (
     <div className="configure">
-      <h2>Configure Ingredients</h2>
-      <div className="configure-ingredient">
+      <h2>What's In Your Kitchen?</h2>
+      <Card className="configure-ingredient">
         <h3>Spirits</h3>
         {availableSpirits.length > 0 && (
           <div className="ingredient-list">
@@ -121,8 +122,8 @@ export default function Configure() {
             onChange={(e) => setNewSpirit(e.target.value)}
           />
         </form>
-      </div>
-      <div className="configure-ingredient">
+      </Card>
+      <Card className="configure-ingredient">
         <h3>Mixers</h3>
         {availableMixers.length > 0 && (
           <div className="ingredient-list">
@@ -152,8 +153,8 @@ export default function Configure() {
             onChange={(e) => setNewMixer(e.target.value)}
           />
         </form>
-      </div>
-      <div className="configure-ingredient">
+      </Card>
+      <Card className="configure-ingredient">
         <h3>Flair/Add-Ins</h3>
         {availableFlair.length > 0 && (
           <div className="ingredient-list">
@@ -183,7 +184,7 @@ export default function Configure() {
             onChange={(e) => setNewFlair(e.target.value)}
           />
         </form>
-      </div>
+      </Card>
     </div>
   );
 }

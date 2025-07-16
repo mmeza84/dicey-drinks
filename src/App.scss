@@ -5,23 +5,37 @@ $border-radius: 8px;
 $spacing: 1rem;
 
 .app {
-  padding: $spacing;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  h1 {
-    border-bottom: 3px solid colorVariables.$rich-black;
-    margin-bottom: $spacing;
-  }
+  background-color: colorVariables.$background-color;
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.75);
+  max-width: 25rem;
+  margin: 0 auto;
 
   button {
     cursor: pointer;
-    border: 2px solid colorVariables.$rich-black;
+    border: 2px solid colorVariables.$button-border-color;
+    background-color: colorVariables.$button-background-color;
+    color: colorVariables.$button-text-color;
     border-radius: 0.25rem;
     padding: 0.5rem;
-    background-color: colorVariables.$hunter-green;
+  }
+
+  input {
+    background-color: colorVariables.$input-background-color;
+    border: 2px solid colorVariables.$input-border-color;
+    color: colorVariables.$input-text-color;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: colorVariables.$input-placeholder-color;
+    }
   }
 
   .app-content {

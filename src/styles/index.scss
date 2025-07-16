@@ -10,7 +10,7 @@ $font-size: 24px;
   font-family: $font-family;
   font-size: $font-size;
   color: colorVariables.$rich-black;
-  background-color: colorVariables.$hunter-green;
+  background-color: colorVariables.$background-color;
 }
 
 /* Globals */
@@ -29,4 +29,6 @@ button {
   }
 }
 
-// Universal Links
+body {
+  background-color: colorVariables.$app-background-color;
+}

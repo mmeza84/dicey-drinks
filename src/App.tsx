@@ -1,12 +1,11 @@
 import "./App.scss";
+import Header from "@/components/header/Header";
 import RouterView from "./RouterView";
 
 function App() {
   return (
     <div className="app">
-      <h1>
-        <a href="/">Dicey Drinks</a>
-      </h1>
+      <Header />
       <div className="app-content">
         <RouterView />
       </div>

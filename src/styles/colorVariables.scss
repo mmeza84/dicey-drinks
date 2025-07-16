@@ -1,5 +1,29 @@
-$hunter-green: #891c1c; // #506d4c;
+$hunter-green: #506d4c;
+$almost-white: #f2f2f2;
+$dark-white: #d1d1d1;
+$very-light-gray: #a3a3a3;
+$ash-gray: #595959;
+$dark-gray: #373737;
 $rich-black: #030303;
-$ash-gray: #bfc3ba;
 $azul: #016fb9;
 $imperial-red: #f15152;
+$light-red: #a34141;
+$crimson: #891c1c;
+
+// General Colors
+$text-color: $rich-black;
+$app-background-color: $almost-white;
+$background-color: $very-light-gray;
+$border-color: $rich-black;
+$card-color: $almost-white;
+
+// Button Colors
+$button-background-color: $light-red;
+$button-border-color: $crimson;
+$button-text-color: $rich-black;
+
+// Input Colors
+$input-background-color: $almost-white;
+$input-border-color: $very-light-gray;
+$input-text-color: $rich-black;
+$input-placeholder-color: $ash-gray;

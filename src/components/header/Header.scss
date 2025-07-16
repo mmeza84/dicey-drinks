@@ -1,0 +1,28 @@
+@use "@styles/colorVariables.scss" as colorVariables;
+
+header.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-bottom: 3px solid colorVariables.$rich-black;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 1.25rem;
+  margin-bottom: 1rem;
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  nav.header-nav {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.85rem;
+
+    a {
+      color: colorVariables.$rich-black;
+      text-decoration: none;
+    }
+  }
+}
