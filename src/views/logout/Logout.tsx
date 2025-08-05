@@ -27,7 +27,7 @@ export default function Logout() {
 
   return (
     <div>
-      <h1>Logged Out Now And Again</h1>
+      <h1>Logged Out Now And</h1>
       <p>You have been logged out.</p>
     </div>
   );
