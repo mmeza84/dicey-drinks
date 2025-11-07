@@ -6,7 +6,7 @@ export default function Header() {
   console.log("User", user);
   return (
     <header className="header">
-      <img src="public/DD_Red.png" alt="App Logo" className="header-logo" />
+      <img src="DD_Red.png" alt="App Logo" className="header-logo" />
       <nav className="header-nav">
         <a href="/configure">Configure</a>
         <a href="/roll">Roll</a>
