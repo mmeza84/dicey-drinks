@@ -14,5 +14,12 @@
     button {
       margin-top: 0.75rem;
     }
+
+    .login-error {
+      color: colorVariables.$imperial-red;
+      font-size: 0.875rem;
+      margin-top: -0.5rem;
+      margin-bottom: 0.5rem;
+    }
   }
 }

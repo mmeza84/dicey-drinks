@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./Login.scss";
 import supabase from "@/utils/supabase";
 import { useNavigate } from "react-router";
@@ -8,6 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   const handleLoginSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -24,6 +25,8 @@ export default function Login() {
     console.log("Login response:", loginResponse);
     if (!loginResponse.error) {
       navigate("/"); // Redirect to home on successful login
+    } else {
+      setLoginError(loginResponse.error.message);
     }
   };
 
@@ -43,6 +46,7 @@ export default function Login() {
             placeholder="Password"
             ref={passwordRef}
           />
+          {loginError && <span className="login-error">{loginError}</span>}
           <button type="submit">Login</button>
         </form>
       </Card>

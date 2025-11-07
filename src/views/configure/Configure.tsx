@@ -6,6 +6,7 @@ import type { Ingredient } from "@/models/models";
 import Card from "@/components/card/Card";
 
 export default function Configure() {
+  const INGREDIENTS_TABLE = "DD_Ingredients";
   const { ingredients, setIngredients, addIngredient, removeIngredient } =
     useConfigurationStore((state) => state);
 
@@ -45,7 +46,7 @@ export default function Configure() {
 
     console.log(`Adding ${type}: ${value}`);
     const result = await supabase
-      .from("ingredients")
+      .from(INGREDIENTS_TABLE)
       .insert({
         type: type,
         name: value,
@@ -62,7 +63,7 @@ export default function Configure() {
 
   const handleDelete = async (ingredientId: number) => {
     console.log(`Deleting ${ingredientId}`);
-    const result = await supabase.from("ingredients").delete().match({
+    const result = await supabase.from(INGREDIENTS_TABLE).delete().match({
       id: ingredientId,
     });
 
@@ -75,7 +76,7 @@ export default function Configure() {
 
   const fetchIngredients = async () => {
     try {
-      const result = await supabase.from("ingredients").select();
+      const result = await supabase.from(INGREDIENTS_TABLE).select();
       if (result.error) throw result.error;
       const ingredients = result.data as Ingredient[];
       setIngredients(ingredients);

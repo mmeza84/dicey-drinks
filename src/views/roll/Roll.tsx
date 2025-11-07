@@ -65,7 +65,7 @@ export default function Roll() {
   } = useDrinkStore((state) => state);
 
   const fetchIngredients = async () => {
-    const { data, error } = await supabase.from("ingredients").select();
+    const { data, error } = await supabase.from("DD_Ingredients").select();
     if (error) {
       console.error("Error fetching ingredients:", error);
     }
