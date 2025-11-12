@@ -43,3 +43,11 @@ $spacing: 1rem;
     max-width: 20rem;
   }
 }
+
+@media (max-width: 600px) {
+  .app {
+    .app-content {
+      width: auto;
+    }
+  }
+}
